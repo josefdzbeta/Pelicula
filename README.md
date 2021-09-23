@@ -1,2 +1,2 @@
 # Pelicula
-Pelicula del Oeste, orienta a objetos
+Pelicula del Oeste, orientada a objetos
