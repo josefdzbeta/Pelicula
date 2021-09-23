@@ -14,7 +14,6 @@ class Pelicula {
     this.maria = new PersonajeBueno('Maria')
     this.morgan = new PersonajeMalo('Morgan Ojo morao\'')
 
-
     this.iniciar()
   }
   iniciar(){
@@ -25,11 +24,22 @@ class Pelicula {
     this.narrador.hablar('Ambos se miraron un instante y siguieron su camino...')
     this.morgan.hablar('Vaya pueblo más... polvoriento')
     this.morgan.hablar('¡Eh tú! ¡Pringao! Dame tu caballo y la cartera')
-    this.morgan.arma.disparar()
-
+    
+    let tiroteoRandom=Math.floor(Math.random() * 10+1)
+      while(tiroteoRandom>0){
+       
+        this.paco.arma.disparar()
+        this.maria.arma.disparar()
+        this.morgan.arma.disparar()
+        
+        tiroteoRandom--
+    }
+    
   }
 
 }
+
+
 //var app = new Pelicula()
 
 class Pueblo {
@@ -46,9 +56,10 @@ class Narrador {
 }
 class Personaje {
   constructor(nombre) {
+
     this.nombre = nombre
     this.arma = new Arma()
-    let balas=10
+    
   }
 
   hablar(texto){
@@ -69,10 +80,28 @@ class PersonajeBueno extends Personaje{
 
 }
 class Arma {
-  disparar(balas){
-    document.write('<p>¡¡ PUM !! </p>')
-    document.write('<p>¡¡ CLICK !! </p>')
+  constructor(){
+    this.balas=3
+  }
+  disparar(){
+    if (this.balas>0){
+      document.write('<p>¡¡ PUM !! </p>')
+
+      this.posicionEnemigo=Math.floor(Math.random() * 5 + 1);
+      this.posicionDisparando=Math.floor(Math.random() * 5 + 1);
+
+      if(this.posicionDisparando===this.posicionEnemigo){
+        document.write('<p>¡¡ AY !! </p>')
+      }
+      this.balas --
+
+    }else{
+      document.write('<p>¡¡ CLICK !! </p>')
+      document.write('<p>¡¡ RECARGANDO !! </p>')
+      this.balas=1
+    }
   }
 }
+
 
 new Pelicula()
