@@ -1,0 +1,13 @@
+body{
+  background-color: pink;
+}
+.personaje span{
+  font-weight: bold;
+  color: black;
+}
+.bueno{
+  color: blue;
+}
+.malo{
+  color: darkred;
+}
