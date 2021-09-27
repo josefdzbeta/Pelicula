@@ -1,0 +1,10 @@
+body{
+  background-color: burlywood;
+  text-align: center;
+}
+.bueno{
+  color: rgb(15, 127, 233);
+}
+.malo{
+  color: rgb(202, 65, 65);
+}
